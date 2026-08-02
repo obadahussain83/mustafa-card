@@ -21,26 +21,26 @@ export default function WaxSeal({ size = 160 }: { size?: number }) {
       <defs>
         {/* جسم الشمع — إضاءة من أعلى اليسار */}
         <radialGradient id="waxBody" cx="38%" cy="28%" r="78%">
-          <stop offset="0%" stopColor="#F4C6BD" />
-          <stop offset="42%" stopColor="#E7ABA0" />
-          <stop offset="75%" stopColor="#D3948A" />
-          <stop offset="100%" stopColor="#A96A5F" />
+          <stop offset="0%" stopColor="#F6C9C0" />
+          <stop offset="38%" stopColor="#E8AAA0" />
+          <stop offset="72%" stopColor="#D18C82" />
+          <stop offset="100%" stopColor="#9F5E55" />
         </radialGradient>
         <radialGradient id="waxDish" cx="46%" cy="40%" r="64%">
-          <stop offset="0%" stopColor="#ECB4A9" />
-          <stop offset="62%" stopColor="#E2A398" />
-          <stop offset="100%" stopColor="#B87B70" />
+          <stop offset="0%" stopColor="#F0B6AC" />
+          <stop offset="62%" stopColor="#DF9C91" />
+          <stop offset="100%" stopColor="#B37369" />
         </radialGradient>
         <radialGradient id="waxSheen" cx="32%" cy="20%" r="50%">
-          <stop offset="0%" stopColor="#FFF8F4" stopOpacity="0.95" />
-          <stop offset="50%" stopColor="#FFF0EA" stopOpacity="0.3" />
+          <stop offset="0%" stopColor="#FFF8F4" stopOpacity="0.98" />
+          <stop offset="50%" stopColor="#FFF0EA" stopOpacity="0.34" />
           <stop offset="100%" stopColor="#FFF0EA" stopOpacity="0" />
         </radialGradient>
 
         {/* ظل الختم على الورق — ظل ناعم + ظل ملامس غامق */}
         <filter id="waxShadow" x="-40%" y="-40%" width="180%" height="180%">
-          <feDropShadow dx="0" dy="7" stdDeviation="7" floodColor="#8A5148" floodOpacity="0.42" />
-          <feDropShadow dx="0" dy="2" stdDeviation="1.2" floodColor="#5F332C" floodOpacity="0.45" />
+          <feDropShadow dx="0" dy="11" stdDeviation="8" floodColor="#8A5148" floodOpacity="0.48" />
+          <feDropShadow dx="0" dy="3" stdDeviation="1.7" floodColor="#5F332C" floodOpacity="0.52" />
         </filter>
 
         {/* إضاءة 3D لجسم الشمع — لمعة specular على الحواف والكتل */}
@@ -104,26 +104,27 @@ export default function WaxSeal({ size = 160 }: { size?: number }) {
       <path
         d={blobPath}
         fill="none"
-        stroke="#8F564D"
-        strokeWidth="6"
-        opacity="0.3"
+        stroke="#764239"
+        strokeWidth="8"
+        opacity="0.42"
         filter="url(#blur2)"
       />
 
       {/* ===== الصحن المضغوط (أثر قالب الختم) ===== */}
       <circle cx="100" cy="100" r="66" fill="url(#waxDish)" />
+      <circle cx="100" cy="100" r="66" fill="none" stroke="#F8CFC6" strokeWidth="4" opacity="0.34" />
       {/* التجويف مظلل من فوق (الضوء من فوق) */}
       <path d="M38 86 A 64 64 0 0 1 162 86" fill="none" stroke="#834D44" strokeWidth="7" opacity="0.42" filter="url(#blur2)" />
-      <path d="M44 78 A 63 63 0 0 1 156 78" fill="none" stroke="#6E3E36" strokeWidth="2.5" opacity="0.3" filter="url(#blur1)" />
+      <path d="M44 78 A 63 63 0 0 1 156 78" fill="none" stroke="#6E3E36" strokeWidth="2.5" opacity="0.34" filter="url(#blur1)" />
       {/* ولمعة من تحت */}
-      <path d="M42 120 A 62 62 0 0 0 158 120" fill="none" stroke="#FBDDD4" strokeWidth="5" opacity="0.7" filter="url(#blur1)" />
+      <path d="M42 120 A 62 62 0 0 0 158 120" fill="none" stroke="#FBDDD4" strokeWidth="5" opacity="0.74" filter="url(#blur1)" />
 
       {/* الحافة البارزة بين الصحن والجسم — لمعة فوقها وظل تحتها */}
-      <circle cx="100" cy="100" r="70.5" fill="none" stroke="#F8D3CA" strokeWidth="2.6" opacity="0.85" />
-      <circle cx="100" cy="100" r="74" fill="none" stroke="#96594F" strokeWidth="2.2" opacity="0.4" filter="url(#blur1)" />
+      <circle cx="100" cy="100" r="70.5" fill="none" stroke="#FFE0D8" strokeWidth="3.4" opacity="0.92" />
+      <circle cx="100" cy="100" r="75" fill="none" stroke="#7C463D" strokeWidth="3" opacity="0.5" filter="url(#blur1)" />
 
       {/* حلقة نقاط منقوشة */}
-      <circle cx="100" cy="100" r="57" fill="none" stroke="#9E6157" strokeWidth="1.7" strokeDasharray="0.5 5.2" strokeLinecap="round" opacity="0.5" />
+      <circle cx="100" cy="100" r="57" fill="none" stroke="#9E6157" strokeWidth="1.7" strokeDasharray="0.5 5.2" strokeLinecap="round" opacity="0.55" />
 
       {/* ===== النقش البارز: ظل تحت-يمين، إضاءة فوق-يسار، ولمعة 3D ===== */}
       {/* الظل اللي بيرميه النقش البارز على الصحن */}
@@ -141,7 +142,7 @@ export default function WaxSeal({ size = 160 }: { size?: number }) {
 
       {/* ===== لمعات نهائية ===== */}
       <ellipse cx="68" cy="50" rx="44" ry="27" fill="url(#waxSheen)" transform="rotate(-18 68 50)" />
-      <ellipse cx="150" cy="150" rx="20" ry="9" fill="#FFF3EE" opacity="0.16" transform="rotate(-40 150 150)" filter="url(#blur2)" />
+      <ellipse cx="150" cy="150" rx="20" ry="9" fill="#FFF3EE" opacity="0.18" transform="rotate(-40 150 150)" filter="url(#blur2)" />
       {/* لمعات حادة صغيرة عالكتل */}
       <ellipse cx="174" cy="86" rx="3" ry="1.6" fill="#FFFAF7" opacity="0.85" transform="rotate(20 174 86)" />
       <ellipse cx="33" cy="67" rx="2.6" ry="1.4" fill="#FFFAF7" opacity="0.8" transform="rotate(-25 33 67)" />

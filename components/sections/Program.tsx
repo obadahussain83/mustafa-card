@@ -8,27 +8,27 @@ import { WEDDING } from "@/lib/constants";
 
 export default function Program() {
   return (
-    <section className="snap-section flex flex-col items-center justify-center bg-blush-dark text-center px-6">
+    <section className="snap-section flex flex-col items-center justify-center bg-blush-dark text-center px-4">
       <BackgroundPattern opacity={0.09} />
       <FloralBranch className="absolute top-4 -right-4 w-36 rotate-180 opacity-50" />
       <FloralBranch className="absolute bottom-10 -left-4 w-36 opacity-50" flip />
 
       <Reveal>
-        <div className="flex items-center gap-2 justify-center mb-3 text-gold-dark">
+        <div className="flex items-center gap-2 justify-center mb-2 text-gold-dark">
           <span className="h-px w-8 bg-gold/60" />
           <svg viewBox="0 0 16 16" className="w-3 h-3" fill="currentColor" aria-hidden>
             <path d="M8 0 L10 6 L16 8 L10 10 L8 16 L6 10 L0 8 L6 6 Z" />
           </svg>
           <span className="h-px w-8 bg-gold/60" />
         </div>
-        <h2 className="font-arabic text-3xl text-ink mb-10">برنامج الحفل</h2>
+        <h2 className="font-arabic text-2xl text-ink mb-5">برنامج الحفل</h2>
       </Reveal>
 
       {/* الخط الزمني */}
       <div className="relative w-full max-w-xs" dir="rtl">
         {/* الخط الذهبي — بينرسم من فوق لتحت */}
         <motion.div
-          className="absolute right-[21px] top-5 bottom-5 w-px origin-top"
+          className="absolute right-[17px] top-4 bottom-4 w-px origin-top"
           style={{ background: "linear-gradient(180deg, #C9A227 0%, rgba(201,162,39,0.35) 100%)" }}
           initial={{ scaleY: 0 }}
           whileInView={{ scaleY: 1 }}
@@ -37,25 +37,25 @@ export default function Program() {
           aria-hidden
         />
 
-        <div className="space-y-5">
+        <div className="space-y-2.5">
           {WEDDING.program.map((item, i) => (
             <motion.div
               key={item.title}
-              className="flex items-center gap-4"
+              className="flex items-center gap-3"
               initial={{ opacity: 0, x: 28 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.25 + i * 0.18, ease: "easeOut" }}
             >
               {/* الأيقونة بدائرة ذهبية فوق الخط */}
-              <span className="relative shrink-0 w-[42px] h-[42px] rounded-full border border-gold/60 bg-blush shadow-[0_3px_10px_rgba(110,62,54,0.15)] flex items-center justify-center text-gold-dark">
+              <span className="relative shrink-0 w-[34px] h-[34px] rounded-full border border-gold/60 bg-blush shadow-[0_3px_10px_rgba(110,62,54,0.15)] flex items-center justify-center text-gold-dark">
                 <ProgramIcon name={item.icon} />
               </span>
 
               {/* البطاقة */}
-              <div className="flex-1 flex items-center justify-between rounded-xl border border-gold/40 bg-white/45 backdrop-blur-sm px-4 py-3">
-                <p className="text-base text-ink font-medium">{item.title}</p>
-                <span className="text-sm text-gold-dark tabular-nums border-r border-gold/30 pr-3 mr-3">
+              <div className="flex-1 flex items-center justify-between gap-2 rounded-lg border border-gold/40 bg-white/45 backdrop-blur-sm px-3 py-2">
+                <p className="min-w-0 text-[13px] text-ink font-medium leading-snug text-right">{item.title}</p>
+                <span className="shrink-0 max-w-[78px] text-[11px] leading-snug text-gold-dark tabular-nums border-r border-gold/30 pr-2">
                   {item.time}
                 </span>
               </div>
@@ -73,7 +73,7 @@ export default function Program() {
 function ProgramIcon({ name }: { name: string }) {
   const common = {
     viewBox: "0 0 24 24",
-    className: "w-5 h-5",
+    className: "w-4 h-4",
     fill: "none",
     stroke: "currentColor",
     strokeWidth: 1.6,

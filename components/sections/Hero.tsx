@@ -10,6 +10,7 @@ export default function Hero() {
   return (
     <section className="snap-section flex flex-col items-center justify-center bg-blush text-center px-8">
       <BackgroundPattern opacity={0.1} />
+      <OpeningPetals />
 
       {/* توهج وردي ناعم خلف المنتصف */}
       <div
@@ -87,6 +88,58 @@ export default function Hero() {
 
       <ScrollHint />
     </section>
+  );
+}
+
+const OPENING_PETALS = [
+  { left: "8%", size: 13, delay: 0.1, duration: 6.2, sway: 28, color: "#D98A80" },
+  { left: "18%", size: 10, delay: 0.7, duration: 6.8, sway: -20, color: "#EFC3BA" },
+  { left: "31%", size: 15, delay: 0.25, duration: 7.1, sway: 24, color: "#E5A99E" },
+  { left: "45%", size: 11, delay: 1.1, duration: 6.4, sway: -26, color: "#D98A80" },
+  { left: "59%", size: 14, delay: 0.5, duration: 7.4, sway: 22, color: "#F4D3CB" },
+  { left: "72%", size: 10, delay: 1.45, duration: 6.9, sway: -18, color: "#E5A99E" },
+  { left: "86%", size: 13, delay: 0.9, duration: 7.2, sway: 25, color: "#D98A80" },
+] as const;
+
+function OpeningPetals() {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+      {OPENING_PETALS.map((petal, index) => (
+        <motion.div
+          key={index}
+          className="absolute -top-8"
+          style={{ left: petal.left }}
+          initial={{ y: "-8vh", x: 0, rotate: 0, opacity: 0 }}
+          animate={{
+            y: ["-8vh", "108vh"],
+            x: [0, petal.sway, -petal.sway * 0.45, petal.sway * 0.2],
+            rotate: [0, 115, 245, 380],
+            opacity: [0, 0.75, 0.65, 0],
+          }}
+          transition={{
+            duration: petal.duration,
+            delay: petal.delay,
+            ease: "easeInOut",
+            repeat: 1,
+            repeatDelay: 0.8,
+          }}
+        >
+          <svg
+            width={petal.size}
+            height={petal.size * 1.45}
+            viewBox="0 0 14 20"
+            className="drop-shadow-sm"
+          >
+            <path
+              d="M7 0 C12 4 13 12 7 20 C1 12 2 4 7 0 Z"
+              fill={petal.color}
+              opacity="0.82"
+            />
+            <path d="M7 3 C7 8 7 13 7 18" stroke="#fff" strokeWidth="0.7" opacity="0.45" />
+          </svg>
+        </motion.div>
+      ))}
+    </div>
   );
 }
 

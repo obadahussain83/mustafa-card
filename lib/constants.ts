@@ -4,25 +4,25 @@
 
 export const WEDDING = {
   // الأسماء
-  groomName: "عمر",
-  brideName: "لين",
-  groomInitial: "O",
-  brideInitial: "L",
+  groomName: "هادي",
+  brideName: "آية",
+  groomInitial: "H",
+  brideInitial: "A",
 
   // التاريخ والوقت — عدّل التاريخ هون (سنة، شهر-1، يوم، ساعة، دقيقة)
   // ملاحظة: الشهر يبدأ من 0 (يعني 7 = آب/أغسطس)
-  weddingDate: new Date(2026, 7, 14, 19, 0, 0),
-  dateLabel: "١٤ آب ٢٠٢٦",
-  timeLabel: "٧:٠٠ مساءً",
+  weddingDate: new Date(2026, 7, 9, 21, 0, 0),
+  dateLabel: "الأحد ٩ آب ٢٠٢٦",
+  timeLabel: "من ٩:٠٠ حتى ١١:٠٠ مساءً",
 
   // المكان
   city: "نابلس",
-  venue: "صالة حياة نابلس",
+  venue: "قاعة سيرموني - حياة نابلس",
   // حط رابط Google Maps الحقيقي للصالة هون
-  venueMapUrl: "https://maps.google.com/?q=صالة+حياة+نابلس",
+  venueMapUrl: "https://maps.google.com/?q=قاعة+سيرموني+حياة+نابلس",
   // رابط التضمين (embed) — اختياري، بيظهر خريطة جوا الصفحة
   venueMapEmbedUrl:
-    "https://www.google.com/maps?q=%D8%B5%D8%A7%D9%84%D8%A9+%D8%AD%D9%8A%D8%A7%D8%A9+%D9%86%D8%A7%D8%A8%D9%84%D8%B3&output=embed",
+    "https://www.google.com/maps?q=%D9%82%D8%A7%D8%B9%D8%A9+%D8%B3%D9%8A%D8%B1%D9%85%D9%88%D9%86%D9%8A+%D8%AD%D9%8A%D8%A7%D8%A9+%D9%86%D8%A7%D8%A8%D9%84%D8%B3&output=embed",
 
   // صور المعرض — حط صورك بمجلد public/gallery وعدّل الأسماء هون
   galleryImages: [
@@ -32,17 +32,19 @@ export const WEDDING = {
 
   // برنامج الحفل — عدّل الأوقات والفقرات من هون
   program: [
-    { time: "٧:٠٠", title: "استقبال الضيوف", icon: "welcome" },
-    { time: "٨:٣٠", title: "دخول العروسين", icon: "rings" },
-    { time: "٩:٣٠", title: "العشاء", icon: "dinner" },
-    { time: "١٠:٣٠", title: "قصّ الكيك", icon: "cake" },
-    { time: "١١:٠٠", title: "السهرة والرقص", icon: "party" },
+    { time: "الأربعاء ٥/٨", title: "استقبال المهنئات لأم العريس مع جبلة الحناء", icon: "welcome" },
+    { time: "الجمعة ٧/٨", title: "تناول طعام العشاء بعد صلاة المغرب في منزل والد العريس", icon: "dinner" },
+    { time: "الجمعة ٧/٨ - ٢:٠٠", title: "حمام العريس في منزل السيد جبري ناجح أبو كريم", icon: "rings" },
+    { time: "بعد الحمام", title: "حفلة الحمام في منزل والد العريس", icon: "cake" },
+    { time: "مباشرة", title: "حفلة يحييها الفنان حافظ موسى", icon: "party" },
+    { time: "الأحد ٩/٨", title: "طلعة العروس من بيت والدها بعد صلاة العصر مباشرة", icon: "welcome" },
+    { time: "٩:٠٠ - ١١:٠٠", title: "حفل الزفاف في قاعة سيرموني - حياة نابلس", icon: "party" },
   ],
 
   // نصوص
   invitationLine:
-    "بقلوبٍ مليئةٍ بالفرح، ندعوكم لتشاركونا ليلة العمر... ليلة اكتمال فرحتنا",
-  heroLine: "قصّة حبٍّ كتبها القدر... ونفرح ببدايتها معكم",
-  thankYouMessage: "شكراً لمشاركتكم فرحتنا، حضوركم أجمل هدية",
+    "ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها",
+  heroLine: "أفراح آل شتيه يتشرفون بدعوتكم لحضور حفل زفاف ولديهما",
+  thankYouMessage: "تشريفكم يكتمل به فرحنا، وأهلاً وسهلاً بكم",
   tapToOpenText: "اضغط لفتح الدعوة",
 } as const;

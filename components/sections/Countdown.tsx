@@ -174,18 +174,30 @@ function WeddingRings() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.5 }}
       >
-      <svg viewBox="0 0 220 130" className="w-44" aria-hidden>
+      <svg viewBox="0 0 220 130" className="w-44 overflow-visible" aria-hidden>
         <defs>
-          <linearGradient id="ringGold" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#EDD08A" />
-            <stop offset="45%" stopColor="#C9A227" />
-            <stop offset="100%" stopColor="#9A7514" />
+          <linearGradient id="ringGold" x1="15%" y1="5%" x2="88%" y2="95%">
+            <stop offset="0%" stopColor="#FFF0A8" />
+            <stop offset="22%" stopColor="#E7C54F" />
+            <stop offset="48%" stopColor="#B98512" />
+            <stop offset="72%" stopColor="#F4D76A" />
+            <stop offset="100%" stopColor="#8A650B" />
           </linearGradient>
-          <linearGradient id="ringGold2" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#F1DCA0" />
-            <stop offset="50%" stopColor="#CFA92F" />
-            <stop offset="100%" stopColor="#8F6C10" />
+          <linearGradient id="ringGold2" x1="85%" y1="0%" x2="10%" y2="100%">
+            <stop offset="0%" stopColor="#FFF4B8" />
+            <stop offset="26%" stopColor="#E4BD3F" />
+            <stop offset="52%" stopColor="#A9780E" />
+            <stop offset="76%" stopColor="#F1D267" />
+            <stop offset="100%" stopColor="#7E5B08" />
           </linearGradient>
+          <linearGradient id="diamondGlow" x1="30%" y1="0%" x2="80%" y2="100%">
+            <stop offset="0%" stopColor="#FFFFFF" />
+            <stop offset="45%" stopColor="#DDF7FF" />
+            <stop offset="100%" stopColor="#8EC6D8" />
+          </linearGradient>
+          <filter id="ringShadow" x="-30%" y="-30%" width="160%" height="170%">
+            <feDropShadow dx="0" dy="5" stdDeviation="3" floodColor="#6E3E36" floodOpacity="0.22" />
+          </filter>
         </defs>
 
         {/* الخاتم الأيسر — بيجي من اليسار وبيدور */}
@@ -201,8 +213,20 @@ function WeddingRings() {
           }}
           style={{ transformOrigin: "88px 72px" }}
         >
-          <circle cx="88" cy="72" r="36" fill="none" stroke="url(#ringGold)" strokeWidth="7.5" />
-          <circle cx="88" cy="72" r="36" fill="none" stroke="#FFF3C4" strokeWidth="2" opacity="0.5" strokeDasharray="18 95" strokeLinecap="round" />
+          <g filter="url(#ringShadow)">
+            <circle cx="88" cy="72" r="36" fill="none" stroke="#7C5A08" strokeWidth="10.5" opacity="0.9" />
+            <circle cx="88" cy="72" r="36" fill="none" stroke="url(#ringGold)" strokeWidth="8" />
+            <circle cx="88" cy="72" r="31.5" fill="none" stroke="#FFEFA6" strokeWidth="1.2" opacity="0.7" />
+            <circle cx="88" cy="72" r="40.5" fill="none" stroke="#8B6509" strokeWidth="1.2" opacity="0.45" />
+            <path
+              d="M62 50 A36 36 0 0 1 102 38"
+              fill="none"
+              stroke="#FFF5C8"
+              strokeWidth="3"
+              strokeLinecap="round"
+              opacity="0.85"
+            />
+          </g>
         </motion.g>
 
         {/* الخاتم الأيمن — بيجي من اليمين ومعه الألماسة */}
@@ -218,8 +242,20 @@ function WeddingRings() {
           }}
           style={{ transformOrigin: "132px 62px" }}
         >
-          <circle cx="132" cy="62" r="36" fill="none" stroke="url(#ringGold2)" strokeWidth="7.5" />
-          <circle cx="132" cy="62" r="36" fill="none" stroke="#FFF3C4" strokeWidth="2" opacity="0.5" strokeDasharray="18 95" strokeLinecap="round" />
+          <g filter="url(#ringShadow)">
+            <circle cx="132" cy="62" r="36" fill="none" stroke="#775506" strokeWidth="10.5" opacity="0.9" />
+            <circle cx="132" cy="62" r="36" fill="none" stroke="url(#ringGold2)" strokeWidth="8" />
+            <circle cx="132" cy="62" r="31.5" fill="none" stroke="#FFF2B3" strokeWidth="1.2" opacity="0.72" />
+            <circle cx="132" cy="62" r="40.5" fill="none" stroke="#8B6509" strokeWidth="1.2" opacity="0.45" />
+            <path
+              d="M111 35 A36 36 0 0 1 150 30"
+              fill="none"
+              stroke="#FFF8D4"
+              strokeWidth="3"
+              strokeLinecap="round"
+              opacity="0.85"
+            />
+          </g>
           {/* الألماسة */}
           <motion.g
             variants={{
@@ -231,8 +267,9 @@ function WeddingRings() {
             }}
             style={{ transformOrigin: "132px 20px" }}
           >
-            <path d="M132 12 L140 20 L132 30 L124 20 Z" fill="#EAF4F8" stroke="#B9D8E3" strokeWidth="1.2" />
-            <path d="M124 20 h16 M132 12 L128 20 L132 30 L136 20 Z" fill="none" stroke="#B9D8E3" strokeWidth="0.8" />
+            <path d="M132 8 L143 19 L132 34 L121 19 Z" fill="url(#diamondGlow)" stroke="#8DBFD0" strokeWidth="1.4" />
+            <path d="M121 19 h22 M132 8 L127 19 L132 34 L137 19 Z" fill="none" stroke="#FFFFFF" strokeWidth="0.9" opacity="0.9" />
+            <path d="M126 15 L132 8 L138 15" fill="none" stroke="#B9D8E3" strokeWidth="0.8" />
           </motion.g>
         </motion.g>
 
@@ -241,7 +278,8 @@ function WeddingRings() {
           d="M 106 40 A 36 36 0 0 1 122 60"
           fill="none"
           stroke="url(#ringGold)"
-          strokeWidth="7.5"
+          strokeWidth="8"
+          strokeLinecap="round"
           variants={{
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { delay: 0.55, duration: 0.2 } },

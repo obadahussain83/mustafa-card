@@ -55,8 +55,8 @@ export default function Program() {
               {/* البطاقة */}
               <div className="flex-1 flex items-center justify-between gap-2 rounded-lg border border-gold/40 bg-white/45 backdrop-blur-sm px-3 py-2">
                 <p className="min-w-0 text-[13px] text-ink font-medium leading-snug text-right">{item.title}</p>
-                <span className="shrink-0 max-w-[78px] text-[11px] leading-snug text-gold-dark tabular-nums border-r border-gold/30 pr-2">
-                  {item.time}
+                <span className="shrink-0 w-[108px] text-[11px] leading-snug text-gold-dark tabular-nums border-r border-gold/30 pr-2" dir="ltr">
+                  <ProgramTime value={item.time} />
                 </span>
               </div>
             </motion.div>
@@ -70,6 +70,29 @@ export default function Program() {
 }
 
 // أيقونات فقرات البرنامج — رسمات خطية ذهبية بسيطة
+function ProgramTime({ value }: { value: string }) {
+  const match = value.match(/^(.+?)\s+([٠-٩0-9]+\/[٠-٩0-9]+)(.*)$/);
+
+  if (!match) {
+    return <span>{value}</span>;
+  }
+
+  const [, day, date, rest] = match;
+
+  return (
+    <span className="relative block min-h-[16px] w-full" dir="ltr">
+      <span className="absolute left-0 top-0 text-left" dir="rtl">{date}</span>
+      <span className="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-gold/30" aria-hidden />
+      <span className="absolute right-0 top-0 text-right" dir="rtl">{day}</span>
+      {rest.trim() ? (
+        <span className="block pt-4 text-center" dir="rtl">
+          {rest.replace(/^\s*-\s*/, "")}
+        </span>
+      ) : null}
+    </span>
+  );
+}
+
 function ProgramIcon({ name }: { name: string }) {
   const common = {
     viewBox: "0 0 24 24",

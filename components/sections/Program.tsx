@@ -71,17 +71,21 @@ export default function Program() {
 
 // أيقونات فقرات البرنامج — رسمات خطية ذهبية بسيطة
 function ProgramTime({ value }: { value: string }) {
-  const match = value.match(/^(.+?)\s+([٠-٩0-9]+\/[٠-٩0-9]+)(.*)$/);
+  const match = value.match(/^(.+?)\s+([٠-٩0-9]+)\/([٠-٩0-9]+)(.*)$/);
 
   if (!match) {
     return <span>{value}</span>;
   }
 
-  const [, day, date, rest] = match;
+  const [, day, dateDay, dateMonth, rest] = match;
 
   return (
     <span className="relative block min-h-[16px] w-full" dir="ltr">
-      <span className="absolute left-0 top-0 text-left" dir="rtl">{date}</span>
+      <span className="absolute left-0 top-0 grid w-8 grid-cols-[1fr_auto_1fr] items-center text-center" dir="ltr">
+        <span>{dateMonth}</span>
+        <span>/</span>
+        <span>{dateDay}</span>
+      </span>
       <span className="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-gold/30" aria-hidden />
       <span className="absolute right-0 top-0 text-right" dir="rtl">{day}</span>
       {rest.trim() ? (

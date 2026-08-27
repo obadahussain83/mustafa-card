@@ -32,12 +32,12 @@ const bodyFont = Tajawal({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName} - ${WEDDING.dateLabel}`,
+  title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
   description: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName} يوم ${WEDDING.dateLabel}، ${WEDDING.timeLabel}`,
   openGraph: {
     type: "website",
     locale: "ar_AR",
-    title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName} - ${WEDDING.dateLabel}`,
+    title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
     description: `نتشرف بدعوتكم لمشاركتنا فرحتنا يوم ${WEDDING.dateLabel} في ${WEDDING.venue}، ${WEDDING.city}`,
     images: [
       {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName} - ${WEDDING.dateLabel}`,
+    title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
     description: `نتشرف بدعوتكم لمشاركتنا فرحتنا يوم ${WEDDING.dateLabel}`,
     images: ["/og-image.png"],
   },

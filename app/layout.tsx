@@ -32,27 +32,27 @@ const bodyFont = Tajawal({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
-  description: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName} — نتشرف بمشاركتكم فرحتنا`,
+  title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName} - ${WEDDING.dateLabel}`,
+  description: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName} يوم ${WEDDING.dateLabel}، ${WEDDING.timeLabel}`,
   openGraph: {
     type: "website",
     locale: "ar_AR",
-    title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
-    description: `نتشرف بدعوتكم لمشاركتنا فرحتنا في ${WEDDING.venue}، ${WEDDING.city}`,
+    title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName} - ${WEDDING.dateLabel}`,
+    description: `نتشرف بدعوتكم لمشاركتنا فرحتنا يوم ${WEDDING.dateLabel} في ${WEDDING.venue}، ${WEDDING.city}`,
     images: [
       {
-        url: "/gallery/photo-1.jpg",
-        width: 399,
-        height: 533,
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
         alt: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
-    description: "نتشرف بدعوتكم لمشاركتنا فرحتنا",
-    images: ["/gallery/photo-1.jpg"],
+    title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName} - ${WEDDING.dateLabel}`,
+    description: `نتشرف بدعوتكم لمشاركتنا فرحتنا يوم ${WEDDING.dateLabel}`,
+    images: ["/og-image.png"],
   },
 };
 

@@ -22,8 +22,8 @@ export default function Home() {
 
   return (
     // عالديسكتوب: بطاقة بعرض موبايل بنص الشاشة، عالموبايل: كامل الشاشة
-    <main className="min-h-dvh flex items-center justify-center overflow-hidden bg-[#ecdccf]">
-      <div className="relative h-dvh w-[min(100vw,420px)] shadow-2xl shadow-ink/20 overflow-hidden bg-blush">
+    <main className="min-h-dvh w-full flex items-center justify-center overflow-hidden bg-[#ecdccf]">
+      <div className="relative h-dvh w-full max-w-[420px] shadow-2xl shadow-ink/20 overflow-hidden bg-blush">
         <AudioControl play={opening} />
 
         <AnimatePresence>

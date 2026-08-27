@@ -39,13 +39,6 @@ export default function FamilyNote() {
           </p>
         </div>
       </Reveal>
-
-      <Reveal delay={0.35}>
-        <p className="mt-7 text-lg font-medium text-gold-dark">
-          أفراح آل شتيه
-        </p>
-      </Reveal>
-
       <ScrollHint />
     </section>
   );

@@ -4,25 +4,25 @@
 
 export const WEDDING = {
   // الأسماء
-  groomName: "هادي",
-  brideName: "آية",
-  groomInitial: "H",
-  brideInitial: "A",
+  groomName: "مصطفى",
+  brideName: "سناء",
+  groomInitial: "M",
+  brideInitial: "S",
 
   // التاريخ والوقت — عدّل التاريخ هون (سنة، شهر-1، يوم، ساعة، دقيقة)
   // ملاحظة: الشهر يبدأ من 0 (يعني 7 = آب/أغسطس)
-  weddingDate: new Date(2026, 7, 9, 21, 0, 0),
-  dateLabel: "الأحد ٩ آب ٢٠٢٦",
-  timeLabel: "من ٩:٠٠ حتى ١١:٠٠ مساءً",
+  weddingDate: new Date(2026, 8, 6, 20, 0, 0),
+  dateLabel: "الأحد ٦/٩/٢٠٢٦",
+  timeLabel: "من ٨:٠٠ حتى ١٠:٠٠ مساءً",
 
   // المكان
   city: "نابلس",
-  venue: "قاعة سيرموني - حياة نابلس",
+  venue: "حياة نابلس القديمة",
   // حط رابط Google Maps الحقيقي للصالة هون
-  venueMapUrl: "https://maps.google.com/?q=قاعة+سيرموني+حياة+نابلس",
+  venueMapUrl: "https://maps.google.com/?q=%D8%AD%D9%8A%D8%A7%D8%A9+%D9%86%D8%A7%D8%A8%D9%84%D8%B3+%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9",
   // رابط التضمين (embed) — اختياري، بيظهر خريطة جوا الصفحة
   venueMapEmbedUrl:
-    "https://www.google.com/maps?q=%D9%82%D8%A7%D8%B9%D8%A9+%D8%B3%D9%8A%D8%B1%D9%85%D9%88%D9%86%D9%8A+%D8%AD%D9%8A%D8%A7%D8%A9+%D9%86%D8%A7%D8%A8%D9%84%D8%B3&output=embed",
+    "https://www.google.com/maps?q=%D8%AD%D9%8A%D8%A7%D8%A9+%D9%86%D8%A7%D8%A8%D9%84%D8%B3+%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9&output=embed",
 
   // صور المعرض — حط صورك بمجلد public/gallery وعدّل الأسماء هون
   galleryImages: [
@@ -32,19 +32,17 @@ export const WEDDING = {
 
   // برنامج الحفل — عدّل الأوقات والفقرات من هون
   program: [
-    { time: "الأربعاء ٥/٨", title: "استقبال المهنئات لأم العريس مع جبلة الحناء", icon: "welcome" },
-    { time: "الجمعة ٧/٨", title: "تناول طعام العشاء بعد صلاة المغرب في منزل والد العريس", icon: "dinner" },
-    { time: "الجمعة ٧/٨ - ٢:٠٠", title: "حمام العريس في منزل السيد جبري ناجح أبو كريم", icon: "rings" },
-    { time: "بعد الحمام", title: "حفلة الحمام في منزل والد العريس", icon: "cake" },
-    { time: "مباشرة", title: "حفلة يحييها الفنان حافظ موسى", icon: "party" },
-    { time: "الأحد ٩/٨", title: "طلعة العروس من بيت والدها بعد صلاة العصر مباشرة", icon: "welcome" },
-    { time: "٩:٠٠ - ١١:٠٠", title: "حفل الزفاف في قاعة سيرموني - حياة نابلس", icon: "party" },
+    { time: "الخميس ٣/٩", title: "جبل الحنة في منزل والد العريس الكائن في دير الحطب", icon: "welcome" },
+    { time: "الجمعة ٤/٩", title: "الغداء في قاعة المجلس القروي (العلالي) - دير الحطب، من بعد صلاة الظهر حتى الساعة ٣", icon: "dinner" },
+    { time: "الجمعة ٤/٩", title: "الحمام بعد صلاة العصر مباشرة بضيافة السيد زياد الحاج أسعد (أبو سائد)", icon: "rings" },
+    { time: "الأحد ٦/٩", title: "حفل الزفاف في حياة نابلس القديمة من الساعة ٨ حتى ١٠ مساءً", icon: "party" },
+    { time: "مؤمنة", title: "المواصلات مؤمنة", icon: "welcome" },
   ],
 
   // نصوص
   invitationLine:
     "ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها",
-  heroLine: "أفراح آل شتيه يتشرفون بدعوتكم لحضور حفل زفاف ولديهما",
+  heroLine: "يتشرفون بدعوتكم لحضور حفل زفاف مصطفى وسناء",
   thankYouMessage: "تشريفكم يكتمل به فرحنا، وأهلاً وسهلاً بكم",
   tapToOpenText: "اضغط لفتح الدعوة",
 } as const;

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "../Reveal";
 import ScrollHint from "../ScrollHint";
@@ -11,6 +12,18 @@ export default function Hero() {
     <section className="snap-section flex flex-col items-center justify-center bg-blush text-center px-8">
       <BackgroundPattern opacity={0.1} />
       <OpeningPetals />
+      <Image
+        src="/keffiyeh-top.png"
+        alt=""
+        width={180}
+        height={180}
+        className="pointer-events-none absolute left-1/2 top-7 z-0 w-28 -translate-x-1/2 opacity-[0.16] sm:top-8 sm:w-32"
+        style={{
+          filter: "sepia(1) saturate(0.9) hue-rotate(354deg) brightness(1.08)",
+          mixBlendMode: "multiply",
+        }}
+        aria-hidden
+      />
 
       {/* توهج وردي ناعم خلف المنتصف */}
       <div
@@ -46,9 +59,7 @@ export default function Hero() {
       </Reveal>
 
       <Reveal delay={0.15}>
-        <h1 className="font-arabic text-6xl leading-tight text-ink drop-shadow-sm">
-          {WEDDING.groomName}
-        </h1>
+        <NameWithTitle title="المحامي" name={WEDDING.groomName} />
       </Reveal>
 
       <Reveal delay={0.3}>
@@ -70,9 +81,7 @@ export default function Hero() {
       </Reveal>
 
       <Reveal delay={0.45}>
-        <h1 className="font-arabic text-6xl leading-tight text-ink drop-shadow-sm">
-          {WEDDING.brideName}
-        </h1>
+        <NameWithTitle title="المحامية" name={WEDDING.brideName} />
       </Reveal>
 
       <Reveal delay={0.65}>
@@ -88,6 +97,21 @@ export default function Hero() {
 
       <ScrollHint />
     </section>
+  );
+}
+
+function NameWithTitle({ title, name }: { title: string; name: string }) {
+  return (
+    <div className="flex flex-col items-center">
+      <div className="mb-1.5 flex items-center gap-2 text-gold-dark">
+        <span className="h-px w-6 bg-gold/45" />
+        <span className="text-sm font-medium tracking-wide">{title}</span>
+        <span className="h-px w-6 bg-gold/45" />
+      </div>
+      <h1 className="font-arabic text-6xl leading-tight text-ink drop-shadow-sm">
+        {name}
+      </h1>
+    </div>
   );
 }
 
